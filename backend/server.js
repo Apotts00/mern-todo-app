@@ -14,8 +14,6 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors());
-app.use('/api/auth', authRoutes);
-app.use('/api/events', eventRoutes);
 app.use('/api/tasks', tasks); // ✅ <--- NEW: Mount task routes
 
 // MongoDB connection

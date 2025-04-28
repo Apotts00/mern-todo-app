@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 const taskRoutes = require("./routes/tasks");
-app.use("/routes/tasks", taskRoutes);
+app.use("/routes/tasks", task);
 
 mongoose
   .connect(process.env.MONGO_URI)

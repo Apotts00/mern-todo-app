@@ -30,7 +30,7 @@ connectDB();
 
 // BLOCK 5: Defining Routes
 const tasksRoutes = require("./routes/tasks");
-app.use("/api/tasks", tasksRoutes);
+app.use("/routes/tasks", tasksRoutes);
 
 // BLOCK 6: Starting the Server
 const PORT = process.env.PORT || 5000;

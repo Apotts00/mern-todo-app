@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const tasks = require('./routes/tasks');  
 
 // BLOCK 2: Configuring the Express App
 dotenv.config();

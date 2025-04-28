@@ -1,6 +1,5 @@
 // BLOCK 1: Importing Dependencies
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import TodoList from "./components/TodoList.tsx";
 import "./App.css";
 

@@ -4,7 +4,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/authRoutes');
 const eventRoutes = require('./routes/eventRoutes');
-const taskRoutes = require('./routes/taskRoutes');  // ✅ <--- NEW
+const taskRoutes = require('./routes/tasks');  // ✅ <--- NEW
 const User = require('./models/User');
 
 dotenv.config();
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/api/auth', authRoutes);
 app.use('/api/events', eventRoutes);
-app.use('/api/tasks', taskRoutes); // ✅ <--- NEW: Mount task routes
+app.use('/api/tasks', tasks); // ✅ <--- NEW: Mount task routes
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })

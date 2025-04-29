@@ -4,6 +4,9 @@ import axios from "axios"; // Don't forget to import axios!
 import TodoList from "./components/TodoList.tsx";
 import "./App.css";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
+
 // BLOCK 2: Defining Task Interface
 interface Task {
   _id: string;

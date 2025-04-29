@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 
-const taskRoutes = require("routes/tasks"); // ✅ Fix: Import the tasks router
+const taskRoutes = require("./routes/tasks"); // ✅ Fix: Import the tasks router
 
 const app = express();
 const PORT = process.env.PORT || 5000;

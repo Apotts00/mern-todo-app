@@ -4,7 +4,6 @@ import axios from "axios"; // Don't forget to import axios!
 import TodoList from "./components/TodoList.tsx";
 import "./App.css";
 
-const BASE_URL = import.meta.env.VITE_API_URL;
 
 
 // BLOCK 2: Defining Task Interface
@@ -22,7 +21,8 @@ const App: React.FC = () => {
   const [editingTaskId, setEditingTaskId] = useState<string | null>(null);
   const [editingTitle, setEditingTitle] = useState<string>("");
 
-  const BASE_URL = "http://localhost:5000/api/tasks"; // <--- cleaner way
+  const BASE_URL = import.meta.env.VITE_API_URL; // <--- this one ONLY
+
 
   // BLOCK 4: Fetch tasks from the backend on component mount
   useEffect(() => {

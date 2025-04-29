@@ -17,7 +17,11 @@ app.get("/", (req, res) => {
 });
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://frontend-9xp1.onrender.com',  
+  methods: 'GET, POST, PUT, DELETE', 
+  credentials: true,
+}));
 app.use(express.json());
 
 // Routes

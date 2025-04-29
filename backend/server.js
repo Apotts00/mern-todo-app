@@ -11,7 +11,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors());
-app.use('/routes/tasks', tasks); // ✅ <--- NEW: Mount task routes
+app.use('/api/tasks', tasks); // ✅ <--- NEW: Mount task routes
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })

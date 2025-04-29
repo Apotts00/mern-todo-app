@@ -22,6 +22,12 @@ const App: React.FC = () => {
   const [editingTitle, setEditingTitle] = useState<string>("");
 
   const BASE_URL = import.meta.env.VITE_API_URL; // <--- this one ONLY
+  
+useEffect(() => {
+  axios.get(`${import.meta.env.VITE_API_URL}`)
+    .then((res) => setTasks(res.data))
+    .catch((err) => console.error("Error fetching tasks:", err));
+}, []);
 
 
   // BLOCK 4: Fetch tasks from the backend on component mount

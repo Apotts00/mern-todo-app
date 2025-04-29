@@ -1,5 +1,6 @@
 // BLOCK 1: Importing Dependencies
 import React, { useState, useEffect } from "react";
+import axios from "axios"; // Don't forget to import axios!
 import TodoList from "./components/TodoList.tsx";
 import "./App.css";
 
@@ -18,11 +19,13 @@ const App: React.FC = () => {
   const [editingTaskId, setEditingTaskId] = useState<string | null>(null);
   const [editingTitle, setEditingTitle] = useState<string>("");
 
+  const BASE_URL = "http://localhost:5000/api/tasks"; // <--- cleaner way
+
   // BLOCK 4: Fetch tasks from the backend on component mount
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get<Task[]>(`http://localhost:5000/routes/tasks`);
+        const response = await axios.get<Task[]>(BASE_URL);
         console.log("Fetched tasks:", response.data); // Debugging log
         setTasks(response.data);
       } catch (error) {
@@ -39,7 +42,7 @@ const App: React.FC = () => {
     try {
       console.log("Adding task:", task); // Debugging log
       const response = await axios.post<Task>(
-        `http://localhost:5000/routes/tasks`,
+        BASE_URL,
         { title: task },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -54,7 +57,7 @@ const App: React.FC = () => {
   // BLOCK 6: Delete a task
   const deleteTask = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:5000/routes/tasks/${id}`);
+      await axios.delete(`${BASE_URL}/${id}`);
       setTasks(tasks.filter((t) => t._id !== id));
     } catch (error) {
       console.error("Error deleting task:", error);
@@ -65,7 +68,7 @@ const App: React.FC = () => {
   const updateTask = async (id: string, updatedTask: Partial<Task>) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/routes/tasks/${id}`,
+        `${BASE_URL}/${id}`,
         updatedTask,
         { headers: { "Content-Type": "application/json" } }
       );
@@ -121,3 +124,4 @@ const App: React.FC = () => {
 
 // BLOCK 10: Exporting the Component
 export default App;
+

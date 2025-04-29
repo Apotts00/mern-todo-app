@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use("/api/tasks", taskRoutes); // ✅ Use the correct path: /api/tasks
+app.use("/api/tasks", task); // ✅ Use the correct path: /api/tasks
 
 // MongoDB Connection
 mongoose

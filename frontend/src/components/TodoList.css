@@ -1,0 +1,121 @@
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+/* Each task card */
+.todo-item {
+  background: #201421;
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+  transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.55);
+}
+
+/* Left side (checkbox + text / edit) */
+.todo-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.todo-left input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #e1c47a;
+  cursor: pointer;
+}
+
+/* Task text */
+.todo-text {
+  font-size: 1rem;
+  transition: color 0.2s ease-out;
+}
+
+.completed .todo-text {
+  text-decoration: line-through;
+  color: #9a8b7a;
+  opacity: 0.75;
+}
+
+/* Edit input */
+.todo-edit-input {
+  flex: 1;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #c5b59a;
+  background: rgba(0,0,0,0.4);
+  color: #f6f1e7;
+  font-size: 0.95rem;
+}
+
+/* Right-side actions */
+.todo-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  border: none;
+  cursor: pointer;
+  font-size: 0.78rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 8px;
+  transition: all 0.15s ease-out;
+}
+
+/* Edit button */
+.action-btn.edit {
+  background: rgba(225,196,122,0.15);
+  color: #e1c47a;
+}
+
+.action-btn.edit:hover {
+  background: rgba(225,196,122,0.25);
+}
+
+/* Save button */
+.action-btn.save {
+  background: #e1c47a;
+  color: #2b1b0f;
+}
+
+.action-btn.save:hover {
+  background: #f1d98c;
+}
+
+/* Cancel button */
+.action-btn.cancel {
+  background: rgba(255,255,255,0.15);
+  color: #e1c47a;
+}
+
+.action-btn.cancel:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Delete button */
+.action-btn.delete {
+  background: transparent;
+  color: #c68f96;
+  font-size: 1.2rem;
+  padding: 0 0.3rem;
+}
+
+.action-btn.delete:hover {
+  color: #ffb3c3;
+}

@@ -158,7 +158,7 @@ const App: React.FC = () => {
           value={task}
           className="todo-input"
           onChange={(e) => setTask(e.target.value)}
-          placeholder="What’s one thing Future You will thank you for?"
+          placeholder="Let's Get Started!"
         />
         <button onClick={addTask} className="btn btn-primary">
           Add Task
